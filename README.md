@@ -10,8 +10,8 @@
 
 ## Overview
 
-This app for Open Web Desktop provides the Dinosaur game from Google Chrome,  
-recreated by [chrisdothtml](https://github.com/chrisdothtml/chrome-dino) and adapted to run inside a desktop window.
+This app for Open Web Desktop provides the Dinosaur game from Google Chrome.  
+Recreated by [chrisdothtml](https://github.com/chrisdothtml/chrome-dino) and adapted to run inside a desktop window.
 
 ## Installation
 
