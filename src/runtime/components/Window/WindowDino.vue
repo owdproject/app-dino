@@ -16,9 +16,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <Window v-bind="$props" :content="{ padded: false }">
+  <DesktopWindow v-bind="$props" :content="{ padded: false }">
     <div ref="container" />
-  </Window>
+  </DesktopWindow>
 </template>
 
 <style scoped lang="scss">
