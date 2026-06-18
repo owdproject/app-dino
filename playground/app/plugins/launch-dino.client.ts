@@ -7,7 +7,7 @@ const WINDOW_MODEL = 'main'
 
 export default defineNuxtPlugin({
   name: 'app-dino-playground-launch',
-  dependsOn: ['owd-app-dino-register'],
+  dependsOn: ['desktop-app-dino-register'],
   async setup(nuxtApp) {
     if (!import.meta.dev) return
 
@@ -32,11 +32,12 @@ export default defineNuxtPlugin({
 
     nuxtApp.hook('app:mounted', async () => {
       await nextTick()
-
-      for (let attempt = 0; attempt < 80; attempt++) {
-        if (await surfaceWindow()) return
-        await new Promise((resolve) => setTimeout(resolve, 50))
-      }
+      await surfaceWindow()
     })
+
+    for (let attempt = 0; attempt < 80; attempt++) {
+      if (await surfaceWindow()) return
+      await new Promise((resolve) => setTimeout(resolve, 50))
+    }
   },
 })
