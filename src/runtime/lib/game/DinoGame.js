@@ -5,6 +5,7 @@ import Dino from '../actors/Dino.js'
 import sprites from '../sprites.js'
 import { playSound } from '../sounds.js'
 import {
+  assetPath,
   loadFont,
   loadImage,
   getImageData,
@@ -90,8 +91,8 @@ export default class DinoGame extends GameRunner {
   async preload() {
     const { settings } = this.state
     const [spriteImage] = await Promise.all([
-      loadImage('/dino/assets/sprite.png'),
-      loadFont('/dino/assets/PressStart2P-Regular.ttf', 'PressStart2P'),
+      loadImage(assetPath('/dino/assets/sprite.png')),
+      loadFont(assetPath('/dino/assets/PressStart2P-Regular.ttf'), 'PressStart2P'),
     ])
     this.spriteImage = spriteImage
     this.spriteImageData = getImageData(spriteImage)

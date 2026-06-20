@@ -1,3 +1,5 @@
+import { assetPath } from './utils.js'
+
 const AudioContext = window.AudioContext || window.webkitAudioContext
 const audioContext = new AudioContext()
 const soundNames = ['game-over', 'jump', 'level-up']
@@ -15,7 +17,7 @@ export function playSound(name) {
 async function loadSounds() {
   await Promise.all(
     soundNames.map(async (soundName) => {
-      soundBuffers[soundName] = await loadBuffer(`/dino/assets/${soundName}.mp3`)
+      soundBuffers[soundName] = await loadBuffer(assetPath(`/dino/assets/${soundName}.mp3`))
     })
   )
 
