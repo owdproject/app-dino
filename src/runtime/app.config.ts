@@ -13,11 +13,6 @@ export default {
         width: 640,
         height: 300,
       },
-      position: {
-        x: 400,
-        y: 240,
-        z: 0,
-      },
     },
   },
   entries: {
@@ -32,7 +27,14 @@ export default {
   },
   commands: {
     dino: (app: IApplicationController) => {
-      app.openWindow('main')
+      const existing = app.getFirstWindowByModel('main')
+      if (existing) {
+        existing.actions.setActive(true)
+        existing.actions.bringToFront()
+        return existing
+      }
+
+      return app.openWindow('main')
     },
   },
 }
