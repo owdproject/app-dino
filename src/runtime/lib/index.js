@@ -27,24 +27,27 @@ export function createDino(desktopWindow, element) {
       DUCK: { 40: 1 },
     }
 
-    document.addEventListener('keydown', ({ keyCode }) => {
+    document.addEventListener('keydown', (e) => {
       if (!desktopWindow.state.focused) {
         return
       }
 
-      if (keycodes.JUMP[keyCode]) {
+      if (keycodes.JUMP[e.keyCode]) {
+        e.preventDefault()
         game.onInput('jump')
-      } else if (keycodes.DUCK[keyCode]) {
+      } else if (keycodes.DUCK[e.keyCode]) {
+        e.preventDefault()
         game.onInput('duck')
       }
     })
 
-    document.addEventListener('keyup', ({ keyCode }) => {
+    document.addEventListener('keyup', (e) => {
       if (!desktopWindow.state.focused) {
         return
       }
 
-      if (keycodes.DUCK[keyCode]) {
+      if (keycodes.DUCK[e.keyCode]) {
+        e.preventDefault()
         game.onInput('stop-duck')
       }
     })
