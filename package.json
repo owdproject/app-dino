@@ -1,6 +1,6 @@
 {
   "name": "@owdproject/app-dino",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Chrome Dinosaur Game for your Open Web Desktop client",
   "keywords": [
     "owd-client",
@@ -33,9 +33,6 @@
   "files": [
     "dist"
   ],
-  "nx": {
-    "name": "app-dino"
-  },
   "scripts": {
     "prepack": "nuxt-module-build build",
     "dev": "pnpm run dev:prepare && cd playground && pnpm exec nuxt dev",
